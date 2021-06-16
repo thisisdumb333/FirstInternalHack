@@ -71,15 +71,14 @@ DWORD WINAPI HackThread(HMODULE hModule)
 
 	GetEntCrosshair = (tGetEntCrosshair)(modBase + 0x607c0);
 
-	// take the localplayer, cast it to a ent*, dereference that ptr
-	// to get to to get it in the same type, then dereference again.. i think.. i need to go back and understand that bit.
+	
 	float closest_player = -1.0f;
 	float closest_yaw = 0.0f;
 	float closest_pitch = 0.0f;
 
 
 	// Theres multiple ways to make a triggerbot, this game has a attack bool, so we can manipulate that, but in case this game didn't, this is how we'd do it:
-	//  INPUT input = { 0 };  <---- from GameHacking.academy: SendInput takes an array of input events, which allows you to send multiple events
+	//  INPUT input = { 0 }; SendInput takes an array of input events, which allows you to send multiple events
 	//  
 	//	input.type = INPUT_MOUSE;
 	//	input.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;     <----- we can use this send a mouse1 input, it would just bAttack
@@ -288,3 +287,5 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 	}
 	return TRUE;
 }
+
+//why the fuck did the code break
